@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis数据结构-压缩列表 | Oliver知识收集站</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="享受着互联网广泛知识，并加以记录，日积月累让它成为一个档案处！">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/oliver-vuepress/assets/css/0.styles.07ee98b6.css" as="style"><link rel="preload" href="/oliver-vuepress/assets/js/app.9734eab6.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/3.9a5d50be.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/1.e4422d40.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/56.e6cc7873.js" as="script"><link rel="prefetch" href="/oliver-vuepress/assets/js/10.04b722f6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/11.8e61eb20.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/12.b54529ad.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/13.720bbb62.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/14.fd6eac8b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/15.fa2e83f4.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/16.51cb8e38.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/17.a76596e6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/18.e6fda937.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/19.d09dff23.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/20.d74fe98c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/21.29073455.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/22.a778c610.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/23.df2a7b4e.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/24.c93b82a9.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/25.16fa68ae.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/26.0023d404.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/27.5acb2183.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/28.d4b89e6a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/29.bd9a97ea.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/30.e96a6679.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/31.af5d51fa.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/32.162cb1f1.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/33.d98eb374.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/34.f7075e10.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/35.a0bd6d65.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/36.d5f5cfb6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/37.9c481bd9.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/38.64baf057.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/39.ecb15d5b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/4.fd3aef42.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/40.fcbbdc9b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/41.1c8b3013.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/42.263226ca.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/43.e8de98f3.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/44.1b7ec77b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/45.50c58d50.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/46.eb6e185a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/47.59d77e6b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/48.7b10f2d1.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/49.563f832a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/5.2f7ff75c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/50.1aa41bd3.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/51.062fb676.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/52.dffa05ce.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/53.b3ba4997.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/54.9af000d0.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/55.a687e5f9.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/57.4f106778.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/58.981a53f5.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/59.41c68066.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/6.960e900d.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/60.25548e59.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/61.ff060da9.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/62.e5b9d252.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/63.3328f331.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/64.eead2467.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/65.b04202bd.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/66.545e5eee.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/67.dcbf055b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/68.5a96a916.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/69.abe2dd18.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/7.5748e8f5.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/8.c9371799.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/9.ffbeeade.js">
+    <link rel="stylesheet" href="/oliver-vuepress/assets/css/0.styles.07ee98b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Oliver知识收集站</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>享受着互联网广泛知识，并加以记录，日积月累让它成为一个档案处！</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>oliver.shi</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/oliver-vuepress/" class="home-link router-link-active"><!----> <span class="site-name">Oliver知识收集站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/oliver-vuepress/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/basics/" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/concurrent/" class="nav-link"><i class="undefined"></i>
+  并发
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/jvm/jvm.html" class="nav-link"><i class="undefined"></i>
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/other/" class="nav-link"><i class="undefined"></i>
+  杂
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/spring/first.html" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/redis/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/kafka/" class="nav-link"><i class="undefined"></i>
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/zookeeper.html" class="nav-link"><i class="undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></div><div class="nav-item"><a href="/oliver-vuepress/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/oliver-vuepress/articles/me.html" class="nav-link"><i class="undefined"></i>
+  个人简介
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      收集站
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/article/first.html" class="nav-link"><i class="undefined"></i>
+  技术好文
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/book/first.html" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/assembly/first.html" class="nav-link"><i class="undefined"></i>
+  优秀开发组件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/software/first.html" class="nav-link"><i class="undefined"></i>
+  软件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/plugin/first.html" class="nav-link"><i class="undefined"></i>
+  插件
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <h3 class="name" data-v-39576ba9>
+    oliver.shi
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>55</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/oliver-vuepress/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/basics/" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/concurrent/" class="nav-link"><i class="undefined"></i>
+  并发
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/jvm/jvm.html" class="nav-link"><i class="undefined"></i>
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/other/" class="nav-link"><i class="undefined"></i>
+  杂
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/spring/first.html" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/redis/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/kafka/" class="nav-link"><i class="undefined"></i>
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/zookeeper.html" class="nav-link"><i class="undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></div><div class="nav-item"><a href="/oliver-vuepress/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/oliver-vuepress/articles/me.html" class="nav-link"><i class="undefined"></i>
+  个人简介
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      收集站
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/article/first.html" class="nav-link"><i class="undefined"></i>
+  技术好文
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/book/first.html" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/assembly/first.html" class="nav-link"><i class="undefined"></i>
+  优秀开发组件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/software/first.html" class="nav-link"><i class="undefined"></i>
+  软件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/plugin/first.html" class="nav-link"><i class="undefined"></i>
+  插件
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Redis数据结构-压缩列表</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>oliver.shi</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">Redis数据结构-压缩列表</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>oliver.shi</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/20/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>Redis</span></i></div></div> <div class="content__default"><blockquote><p>压缩列表 是 Redis 列表 和 hash的底层实现之一。</p> <p>当 包含少量元素 或者 元素为小整数值 或者 较短的字符串时，才会选用  压缩列表</p> <p>压缩列表 主要还是为 节约内存而实现的，是由一组特殊编码的连续内存块组成的顺序型数据结构</p></blockquote> <p>与 数组把不同 数组会创建相同大小的空间，来存储不用大小的数据，如果我们要存储不同长度的字符串，都是短字符串的话，会浪费大量空间</p> <p>而 压缩列表 可以对存储的数据，指定存储的数据大小</p> <h2 id="基本数据结构"><a href="#基本数据结构" class="header-anchor">#</a> 基本数据结构</h2> <img src="/oliver-vuepress/middleware/redislearn/redis压缩列表.png" alt="foo"> <table><thead><tr><th style="text-align:left;">属性</th> <th>用途</th></tr></thead> <tbody><tr><td style="text-align:left;">zlbytes</td> <td>记录整个压缩列表占用的内存字节数：在对压缩列表进行内存重分配或者计算zlend的位置时使用</td></tr> <tr><td style="text-align:left;">zltail</td> <td>记录压缩列表表尾节点距离压缩列表的起始地址有多少字节<br>通过这个<code>偏移量</code>，程序无须遍历整个压缩列表就可以确定表尾节点的地址</td></tr> <tr><td style="text-align:left;">zllen</td> <td>记录压缩列表的节点数量 <br>值小于 65535：该值就是真实的节点数据<br>值大于65535：该值则无用，需要遍历整个压缩列表才能进行计算</td></tr> <tr><td style="text-align:left;">entryX</td> <td>压缩列表节点</td></tr> <tr><td style="text-align:left;">zlend</td> <td>特殊值0xF℉（十进制255），用于标记压缩列表的末端</td></tr></tbody></table> <p><strong>节点元素</strong></p> <img src="/oliver-vuepress/middleware/redislearn/redis压缩列表节点元素.png" alt="foo"> <table><thead><tr><th>属性</th> <th>用途</th></tr></thead> <tbody><tr><td>previous_entry_length</td> <td>记录压缩表前一个节点的长度<br>前一个节点长度小于254字节：属性使用长度为1个字节存储<br>前一个节点长度大于254字节：属于使用长度为5个字存储。第一个字节 0xFE(固定的) 后四个自己保存前一个节点的长度</td></tr> <tr><td>encoding</td> <td>保存数据的类型  以及 长度  （即 content 的长度 和 数据类型）</td></tr> <tr><td>content</td> <td>具体的内存</td></tr></tbody></table> <p>由于节点 使用 <code>previous_entry_length</code> 存储了 上一个节点的长度，配合 压缩列表中  <code>zltail</code> 尾节点的起始位置。进行遍历 可以实现从尾节点 一路 寻找到 头节点</p> <p>计算公式： p = zltail - previous_entry_length</p> <h2 id="连锁更新"><a href="#连锁更新" class="header-anchor">#</a> 连锁更新</h2> <blockquote><p>连锁更新问题 ：由于当前节点的 <code>previous_entry_length</code> 值取决于前一个节点的内容，所以当前一个节点改动时，当前节点的
+<code>previous_entry_length</code> 也可能发生改变 。如果连续发生这样的事情，将会触发连锁更新问题，消耗性能。</p></blockquote> <p>在一个极其特殊的情况：</p> <p>所有的节点都正常介于 250  ~  253 字节</p> <img src="/oliver-vuepress/middleware/redislearn/redis压缩列表添加节点.png" alt="foo"> <p>当新增 一个大于 254字节的节点时，e1的previous_entry_length属性仅长1字节,它没办法保存新节点new的长度
+因此 需要进行空间重分配操作，将 e1的previous_entry_length 从 1个字节 扩展为 5字节。 后续节点也是如此，都需要进行连续扩容</p> <p><strong>因为连锁更新在最坏情况下需要对压缩列表执行 N 次空间重分配操作，而空间重分配的最坏复杂度为 O(N) ，所以连锁更新的最坏复杂度为 O(N 的平方 ）</strong></p> <p><strong>删除节点也可能发生</strong></p> <p><strong>其实这种情况发生的几率比较低</strong></p> <ol><li>恰好有多个连续的、长度介于250字节至253 字节之间的节点</li> <li>即使出现连锁更新,但只要被更新的节点数量不多,就不会对性能造成任何影响</li></ol></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/middleware/redis/Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8(ziplist).html#基本数据结构" class="sidebar-link reco-side-基本数据结构" data-v-cb1513f6>基本数据结构</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/middleware/redis/Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8(ziplist).html#连锁更新" class="sidebar-link reco-side-连锁更新" data-v-cb1513f6>连锁更新</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/oliver-vuepress/assets/js/app.9734eab6.js" defer></script><script src="/oliver-vuepress/assets/js/3.9a5d50be.js" defer></script><script src="/oliver-vuepress/assets/js/1.e4422d40.js" defer></script><script src="/oliver-vuepress/assets/js/56.e6cc7873.js" defer></script>
+  </body>
+</html>
