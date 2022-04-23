@@ -12,10 +12,10 @@ tags:
 
 - [简单动态字符串SDS](./Reids数据结构-简单动态字符串SDS.html)
 - [链表](./Redis数据结构-链表.html)
-- [压缩表](./Redis数据结构-压缩列表(ziplist).html)
-- [快速链表](Redis数据结构-快速列表(quicklist).html)
+- [压缩表](./Redis数据结构-压缩列表.html)
+- [快速链表](Redis数据结构-快速列表.html)
 - [字典](./Redis数据结构-字典.html)
-- [整数集合](./Redis数据结构-整型集合(intset).html)
+- [整数集合](./Redis数据结构-整型集合.html)
 - [跳跃表](./Redis数据结构-跳跃表.html)
 
 ## Redis对象

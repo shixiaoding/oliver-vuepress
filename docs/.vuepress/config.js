@@ -35,7 +35,7 @@ module.exports = {
             ]},
             { text: '算法', link: '/articles/algorithm/'},
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-            { text: '个人简介', link: '/articles/me'},
+            // { text: '个人简介', link: '/articles/me'},
             { text: '收集站',
                 items: [
                     { text: '技术好文', link: '/articles/collect/article/first' },
