@@ -115,6 +115,7 @@ module.exports = {
                         {title: 'kafka 架构体系',path: 'framework'},
                         {title: 'kafka 生产者',path: 'producer'},
                         {title: 'kafka 消费者',path: 'consumer'},
+                        {title: 'kafka 日志',path: 'log'},
                         {title: 'kafka 为什么快',path: 'why-fast'},
                         {title: 'kafka的优缺点& 应用场景', path: 'application'}
                     ]
