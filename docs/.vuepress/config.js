@@ -30,7 +30,7 @@ module.exports = {
             { text: 'Spring', link: '/articles/spring/first'},
             { text: '中间件', items: [
                 {text: 'Redis', link: "/articles/middleware/redis/redis"},
-                {text: 'Kafka', link: "/articles/middleware/kafka/"},
+                {text: 'Kafka', link: "/articles/middleware/kafka/framework"},
                 {text: 'Zookeeper', link: "/articles/middleware/zookeeper"},
             ]},
             { text: '算法', link: '/articles/algorithm/'},
