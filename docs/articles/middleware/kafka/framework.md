@@ -19,7 +19,7 @@ tags:
 
 > **生产者**  负责生产消息，将消费推送到 Broker 中
 
-[详细介绍](./prooducer.html)
+[详细介绍](./producer.html)
 
 ### Consumer
 
