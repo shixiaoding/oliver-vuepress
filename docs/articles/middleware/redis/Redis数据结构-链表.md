@@ -40,7 +40,6 @@ typedef struct listNode {
 
 <img :src="$withBase('/middleware/redislearn/redisList.png')" alt="foo">
 
-- dup:  复制节点函数
 - free：释放节点函数
 - match：比较节点函数
 
