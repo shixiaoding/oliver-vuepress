@@ -25,7 +25,7 @@ Redis 3.2 之后：
 
 ## 基本结构
 
-<img :src="$withBase('/middleware/redislearn/Reids链表.png')" alt="foo">
+<!-- <img :src="$withBase('/middleware/redislearn/Reids链表.png')" alt="foo"> -->
 
 ```C
 typedef struct listNode { 
