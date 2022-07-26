@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>枚举 | Oliver知识收集站</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="享受着互联网广泛知识，并加以记录，日积月累让它成为一个档案处！">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/oliver-vuepress/assets/css/0.styles.07ee98b6.css" as="style"><link rel="preload" href="/oliver-vuepress/assets/js/app.c6c05806.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/3.9a5d50be.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/1.e4422d40.js" as="script"><link rel="preload" href="/oliver-vuepress/assets/js/21.2b78046e.js" as="script"><link rel="prefetch" href="/oliver-vuepress/assets/js/10.04b722f6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/11.494d06fd.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/12.9632343a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/13.4c18409a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/14.19f58d02.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/15.5ebccb98.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/16.1cbcd07f.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/17.c1f9e959.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/18.a46e463c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/19.06903213.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/20.6a8c126a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/22.a778c610.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/23.cd185a99.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/24.d8bcdf55.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/25.d5c1577a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/26.0023d404.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/27.72448c3f.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/28.d4b89e6a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/29.ff08f3e1.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/30.6ea21708.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/31.c8c9e73c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/32.85b3eb5f.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/33.1e74c8b6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/34.f7075e10.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/35.a0bd6d65.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/36.f2527987.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/37.a4ef5145.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/38.62c7a1eb.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/39.0a714588.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/4.fd3aef42.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/40.1d5a68ab.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/41.ed8e28b6.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/42.fdcf8873.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/43.bbf0ba3d.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/44.b447d792.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/45.6a27162c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/46.3f7f0230.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/47.6e0fca04.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/48.18ac3a82.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/49.9362a34a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/5.2f7ff75c.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/50.24d54642.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/51.81f75c55.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/52.016a88b2.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/53.5678f5df.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/54.37608e19.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/55.cc378ee5.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/56.6baee78f.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/57.129154d3.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/58.d77f29b2.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/59.d1974135.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/6.960e900d.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/60.ee701ac2.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/61.2a42fd43.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/62.848a267b.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/63.fd536b3a.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/64.bc64d750.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/65.f9ceb3b2.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/66.65a39fd4.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/67.df8c3edc.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/7.5748e8f5.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/8.c9371799.js"><link rel="prefetch" href="/oliver-vuepress/assets/js/9.1779f2d2.js">
+    <link rel="stylesheet" href="/oliver-vuepress/assets/css/0.styles.07ee98b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Oliver知识收集站</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>享受着互联网广泛知识，并加以记录，日积月累让它成为一个档案处！</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>oliver.shi</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/oliver-vuepress/" class="home-link router-link-active"><!----> <span class="site-name">Oliver知识收集站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/oliver-vuepress/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/basics/" class="nav-link router-link-active"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/concurrent/" class="nav-link"><i class="undefined"></i>
+  并发
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/jvm/jvm.html" class="nav-link"><i class="undefined"></i>
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/other/" class="nav-link"><i class="undefined"></i>
+  杂
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/spring/first.html" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/redis/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/kafka/framework.html" class="nav-link"><i class="undefined"></i>
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/zookeeper.html" class="nav-link"><i class="undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></div><div class="nav-item"><a href="/oliver-vuepress/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      收集站
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/article/first.html" class="nav-link"><i class="undefined"></i>
+  技术好文
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/book/first.html" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/assembly/first.html" class="nav-link"><i class="undefined"></i>
+  优秀开发组件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/software/first.html" class="nav-link"><i class="undefined"></i>
+  软件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/plugin/first.html" class="nav-link"><i class="undefined"></i>
+  插件
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <h3 class="name" data-v-39576ba9>
+    oliver.shi
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>52</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/oliver-vuepress/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/basics/" class="nav-link router-link-active"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/concurrent/" class="nav-link"><i class="undefined"></i>
+  并发
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/jvm/jvm.html" class="nav-link"><i class="undefined"></i>
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/java/other/" class="nav-link"><i class="undefined"></i>
+  杂
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/spring/first.html" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/redis/redis.html" class="nav-link"><i class="undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/kafka/framework.html" class="nav-link"><i class="undefined"></i>
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/middleware/zookeeper.html" class="nav-link"><i class="undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/oliver-vuepress/articles/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></div><div class="nav-item"><a href="/oliver-vuepress/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      收集站
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/article/first.html" class="nav-link"><i class="undefined"></i>
+  技术好文
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/book/first.html" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/assembly/first.html" class="nav-link"><i class="undefined"></i>
+  优秀开发组件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/software/first.html" class="nav-link"><i class="undefined"></i>
+  软件
+</a></li><li class="dropdown-item"><!----> <a href="/oliver-vuepress/articles/collect/plugin/first.html" class="nav-link"><i class="undefined"></i>
+  插件
+</a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础篇</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/oliver-vuepress/articles/java/basics/oop.html" class="sidebar-link">面向对象</a></li><li><a href="/oliver-vuepress/articles/java/basics/enum.html" aria-current="page" class="active sidebar-link">枚举</a></li><li><a href="/oliver-vuepress/articles/java/basics/datatype.html" class="sidebar-link">数据类型</a></li><li><a href="/oliver-vuepress/articles/java/basics/string.html" class="sidebar-link">字符串</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>枚举</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>oliver.shi</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">枚举</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>oliver.shi</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>11/7/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>Java</span></i></div></div> <div class="theme-reco-content content__default"><p><code>enum</code> 全称 enumeration, 是JDK5中引入的特性
+枚举的好处： 可以将常量组织起来，统一管理<br>
+枚举的典型应用场景：错误码、状态机等。</p> <h2 id="枚举的本质"><a href="#枚举的本质" class="header-anchor">#</a> 枚举的本质</h2> <p>通过反编译后代码我们可以看到，public final class T extends Enum，
+说明: 该类是继承了Enum类的，同时final关键字告诉我们，这个类也是不能被继承的</p> <p>枚举的本质是:  一个特殊的，受限制的类，它继承了<code>java.lang.Enum</code>类<br>
+枚举这种特殊的类会被加上 <code>final</code> 修饰符<br>
+定义的枚举值，会被默认修改 <code>public static final</code>, 枚举值本质上是静态常量</p> <p>枚举代码：</p> <div class="language- extra-class"><pre class="language-text"><code>public enum t {
+    SPRING,SUMMER;
+}
+</code></pre></div><p>枚举反编译后：</p> <div class="language-Java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">Enum</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">T</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">T</span> at<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+        <span class="token class-name">T</span> at1<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>at <span class="token operator">=</span> ENUM$VALUES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> at1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T</span><span class="token punctuation">[</span>i <span class="token operator">=</span> at<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> at1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">T</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span><span class="token class-name">Enum</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>demo<span class="token operator">/</span><span class="token class-name">T</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">T</span> SPRING<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">T</span> SUMMER<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">T</span> ENUM$VALUES<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span>
+    <span class="token punctuation">{</span>
+        SPRING <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T</span><span class="token punctuation">(</span><span class="token string">&quot;SPRING&quot;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        SUMMER <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T</span><span class="token punctuation">(</span><span class="token string">&quot;SUMMER&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ENUM$VALUES <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+            SPRING<span class="token punctuation">,</span> SUMMER
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="枚举中的方法"><a href="#枚举中的方法" class="header-anchor">#</a> 枚举中的方法</h2> <br> <img src="/oliver-vuepress/java/enum/method.png" alt="foo"> <p>枚举类型的父类：</p> <div class="language-Java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Enum</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span> <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span>
+        <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+<span class="token comment">//枚举成员的名称</span>
+<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+<span class="token comment">//枚举成员的顺序，是按照定义的顺序，从0开始</span>
+<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> ordinal<span class="token punctuation">;</span>
+
+<span class="token comment">//构造方法</span>
+<span class="token keyword">protected</span> <span class="token class-name">Enum</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> ordinal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>ordinal <span class="token operator">=</span> ordinal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+ <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">ordinal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//返回枚举常量的序数</span>
+        <span class="token keyword">return</span> ordinal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//返回此枚举常量的名称，在其枚举声明中对其进行声明。</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+ <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> other<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token operator">==</span>other<span class="token punctuation">;</span><span class="token comment">//比较地址</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">E</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//返回枚举常量的序数</span>
+    <span class="token comment">//是按照次序 ordinal来比较的</span>
+<span class="token punctuation">}</span>
+
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> enumType<span class="token punctuation">,</span>  <span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+ <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="枚举的特性"><a href="#枚举的特性" class="header-anchor">#</a> 枚举的特性</h2> <ul><li><p>基本特性</p> <ul><li>枚举默认是 从 0 开始的有序数值</li> <li>当没有定义方法时， 枚举实例可以使用 逗号、分号、或者什么都不加</li></ul></li> <li><p>赋值相关特性</p> <ul><li>java 中不允许 使用 <code>=</code> 为枚举常量赋</li> <li>java 中可以添加 普通、静态、抽象、构造 方法
+<ul><li>java中虽然不能直接赋值，但是可以使用添加方法来间接赋值</li></ul></li></ul></li> <li><p>继承相关</p> <ul><li><code>enum</code> 可以像一般类一样实现接口</li> <li>枚举是不可被继承的
+<ul><li>因为 jvm 会给改类 加上 <code>final</code> 修饰符</li> <li>实际上 枚举类都是继承自 <code>java.lang.Enum</code> 类 ，而Java不支持多重继承</li></ul></li></ul></li> <li><p>枚举可以添加方法：</p> <ul><li>普通方法</li> <li>静态方法</li> <li>抽象方法</li> <li>构造方法</li></ul></li> <li><p>枚举可以实现接口</p></li></ul> <h2 id="枚举的应用"><a href="#枚举的应用" class="header-anchor">#</a> 枚举的应用</h2> <ul><li>组织常量</li> <li>switch 状态机</li> <li>错误码</li> <li>组织枚举 （由于枚举无法被类继承扩展）
+<ul><li>希望扩展原来的枚举类型中的元素；</li> <li>希望使用子类对枚举类型中的元素进行分组；</li></ul></li></ul> <div class="language-Java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Food</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">enum</span> <span class="token class-name">Appetizer</span> <span class="token keyword">implements</span> <span class="token class-name">Food</span> <span class="token punctuation">{</span>
+        SALAD<span class="token punctuation">,</span> SOUP<span class="token punctuation">,</span> SPRING_ROLLS
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">enum</span> <span class="token class-name">Coffee</span> <span class="token keyword">implements</span> <span class="token class-name">Food</span> <span class="token punctuation">{</span>
+        BLACK_COFFEE<span class="token punctuation">,</span> DECAF_COFFEE<span class="token punctuation">,</span> ESPERSSO<span class="token punctuation">,</span> TEA<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">enum</span> <span class="token class-name">Dessert</span> <span class="token keyword">implements</span> <span class="token class-name">Food</span> <span class="token punctuation">{</span>
+        FRUIT<span class="token punctuation">,</span> GELATO<span class="token punctuation">,</span> TIRAMISU<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 调用</span>
+<span class="token class-name">Food</span> food <span class="token operator">=</span> <span class="token class-name">Food</span><span class="token punctuation">.</span><span class="token class-name">Coffee</span><span class="token punctuation">.</span>ESPERSSO<span class="token punctuation">;</span><span class="token comment">//ESPERSSO不仅是coffee,也属于大类Food，达到分类的效果</span>
+
+</code></pre></div><ul><li>枚举单例</li></ul> <h2 id="枚举的两大工具"><a href="#枚举的两大工具" class="header-anchor">#</a> 枚举的两大工具</h2> <h4 id="_1、enumset"><a href="#_1、enumset" class="header-anchor">#</a> 1、EnumSet</h4> <p>EnumSet是一个抽象类，继承AbstractSet，本质上是个Set 实现。枚举set中所有键必须来自单个枚举类型。<br>
+EnumSet 是个高性能的set<br>
+EnumSet 不支持同步访问, 实现线程安全的方式：</p> <div class="language- extra-class"><pre class="language-text"><code>Set&lt;MyEnum&gt; s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
+</code></pre></div><p>主要接口：</p> <ul><li>noneOf - 创建一个具有指定元素类型的空 EnumSet</li> <li>allOf - 创建一个指定元素类型并包含所有枚举值的 EnumSet</li> <li>range - 创建一个包括枚举值中指定范围元素的 EnumSet</li> <li>complementOf - 初始集合包括指定集合的补集</li> <li>of - 创建一个包括参数中所有元素的 EnumSet</li> <li>copyOf - 创建一个包含参数容器中的所有元素的 EnumSet</li></ul> <h4 id="_2、enummap"><a href="#_2、enummap" class="header-anchor">#</a> 2、EnumMap</h4> <p>EnumMap是一个类，同样也是与枚举类型键一起使用的专用 Map 实现。枚举映射中所有键都必须来自单个枚举类型，该枚举类型在创建映射时显式或隐式地指定。枚举映射在内部表示为数组。此表示形式非常紧凑且高效。</p> <p>主要接口：</p> <ul><li>size - 返回键值对数</li> <li>containsValue - 是否存在指定的 value</li> <li>containsKey - 是否存在指定的 key</li> <li>get - 根据指定 key 获取 value</li> <li>put - 取出指定的键值对</li> <li>remove - 删除指定 key</li> <li>putAll - 批量取出键值对</li> <li>clear - 清除数据</li> <li>keySet - 获取 key 集合</li> <li>values - 返回所有</li></ul> <p>防止线程安全：</p> <div class="language- extra-class"><pre class="language-text"><code>     Map&lt;EnumKey, V&gt; m
+         = Collections.synchronizedMap(new EnumMap&lt;EnumKey, V&gt;(...));
+
+</code></pre></div><h2 id="思维导图"><a href="#思维导图" class="header-anchor">#</a> 思维导图</h2> <br> <img src="/oliver-vuepress/java/enum/enum.png" alt="foo"></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/21/2022, 8:17:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/oliver-vuepress/articles/java/basics/oop.html" class="prev">
+            面向对象
+          </a></span> <span class="next"><a href="/oliver-vuepress/articles/java/basics/datatype.html">
+            数据类型
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#枚举的本质" class="sidebar-link reco-side-枚举的本质" data-v-cb1513f6>枚举的本质</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#枚举中的方法" class="sidebar-link reco-side-枚举中的方法" data-v-cb1513f6>枚举中的方法</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#枚举的特性" class="sidebar-link reco-side-枚举的特性" data-v-cb1513f6>枚举的特性</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#枚举的应用" class="sidebar-link reco-side-枚举的应用" data-v-cb1513f6>枚举的应用</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#枚举的两大工具" class="sidebar-link reco-side-枚举的两大工具" data-v-cb1513f6>枚举的两大工具</a></li><li class="level-2" data-v-cb1513f6><a href="/oliver-vuepress/articles/java/basics/enum.html#思维导图" class="sidebar-link reco-side-思维导图" data-v-cb1513f6>思维导图</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/oliver-vuepress/assets/js/app.c6c05806.js" defer></script><script src="/oliver-vuepress/assets/js/3.9a5d50be.js" defer></script><script src="/oliver-vuepress/assets/js/1.e4422d40.js" defer></script><script src="/oliver-vuepress/assets/js/21.2b78046e.js" defer></script>
+  </body>
+</html>
