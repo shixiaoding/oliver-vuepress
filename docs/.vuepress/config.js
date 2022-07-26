@@ -3,7 +3,7 @@ module.exports = {
     title: 'Oliver知识收集站',// 设置网站标题
     description: '享受着互联网广泛知识，并加以记录，日积月累让它成为一个档案处！',
     base: '/oliver-vuepress/',// 设置站点根路径
-    dest: './ROOT',  // 设置输出目录
+    dest: './newroot',  // 设置输出目录
     head: [
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
     ],

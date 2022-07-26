@@ -38,8 +38,24 @@ typedef struct listNode {
 } listNode
 ```
 
-<img :src="$withBase('/middleware/redislearn/redisList.png')" alt="foo">
+```C
+typedef struct list {    
+  // 表头节点    
+  listNode * head;    
+  // 表尾节点    
+  listNode * tail;     
+  // 链表所包含的节点数量   
+  unsigned long len;    
+  // 节点值复制函数   
+  void *(*dup)(void *ptr);   
+  // 节点值释放函数   
+  void (*free)(void *ptr);   
+  // 节点值对比函数   
+  int (*match)(void *ptr,void *key);
+} list
+```
 
+- dup:  复制节点函数
 - free：释放节点函数
 - match：比较节点函数
 
