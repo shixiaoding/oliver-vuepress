@@ -12,8 +12,6 @@ cd docs/.vuepress/dist
 git init
 git add -A
 git commit -m 'deploy'
-
-
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:shixiaoding/oliver-vuepress.git master:gh-pages
 
