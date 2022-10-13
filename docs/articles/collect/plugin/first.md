@@ -10,3 +10,7 @@
 | Free MyBatis plugin            | Mybatis  插件 谁用谁知道                                     |
 | jclasslib Bytecode viewer      | Java 对象 在JVM 中的使用的情况图形界面视图 好用，可以帮助我们了解代码的运行 |
 | Leetcode Editor                | Leetcode 刷题小助手                                          |
+| generateallsetter              | 快捷的 Get/Set 插件                                          |
+| camelCase                      | 变量驼峰转换                                                 |
+| GsonFormatPlus                 | Json转实体对象                                               |
+| PlantUML                       | 已简单的代码可以让你快速编写UML图的组件                      |
